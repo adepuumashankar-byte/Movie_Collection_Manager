@@ -1,0 +1,200 @@
+/* ==========================================
+   MODAL OVERLAY
+========================================== */
+
+.modal-overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.75);
+    backdrop-filter:blur(8px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    animation:fadeIn .3s ease;
+}
+
+/* ==========================================
+   MODAL CARD
+========================================== */
+
+.movie-modal{
+    width:90%;
+    max-width:950px;
+    max-height:90vh;
+    overflow-y:auto;
+    background:linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b,
+        #312e81
+    );
+    color:white;
+    border-radius:25px;
+    padding:30px;
+    position:relative;
+    box-shadow:0 25px 60px rgba(0,0,0,.5);
+    animation:zoomIn .35s ease;
+}
+
+/* ==========================================
+   CLOSE BUTTON
+========================================== */
+
+.close-btn{
+    position:absolute;
+    top:15px;
+    right:20px;
+    border:none;
+    background:#ef4444;
+    color:white;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.close-btn:hover{
+    transform:rotate(90deg);
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.modal-header{
+    display:flex;
+    gap:25px;
+    align-items:center;
+}
+
+.movie-poster{
+    width:180px;
+    height:260px;
+    object-fit:cover;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+.modal-header h2{
+    font-size:34px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+/* ==========================================
+   INFO GRID
+========================================== */
+
+.movie-info{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.movie-info p{
+    background:rgba(255,255,255,.08);
+    padding:12px;
+    border-radius:12px;
+    margin:0;
+}
+
+/* ==========================================
+   COLLECTIONS
+========================================== */
+
+.collection-section{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.collection-section div{
+    text-align:center;
+    background:rgba(255,255,255,.08);
+    padding:20px;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.collection-section div:hover{
+    transform:translateY(-5px);
+}
+
+.collection-section h6{
+    color:#cbd5e1;
+}
+
+.collection-section p{
+    color:#22c55e;
+    font-size:20px;
+    font-weight:700;
+    margin:0;
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+.movie-modal::-webkit-scrollbar{
+    width:8px;
+}
+
+.movie-modal::-webkit-scrollbar-thumb{
+    background:#6366f1;
+    border-radius:20px;
+}
+
+/* ==========================================
+   ANIMATION
+========================================== */
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+@keyframes zoomIn{
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+    .modal-header{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .movie-info{
+        grid-template-columns:1fr;
+    }
+
+    .collection-section{
+        grid-template-columns:1fr;
+    }
+
+    .movie-poster{
+        width:100%;
+        max-width:250px;
+        height:auto;
+    }
+}

@@ -1,0 +1,332 @@
+/* ===============================
+   LOGIN PAGE
+=================================*/
+
+.login-page{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px 20px;
+
+}
+
+/* ===============================
+   LOGIN CARD
+=================================*/
+
+.login-card{
+
+    width:100%;
+    max-width:500px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:25px;
+
+    padding:40px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.45);
+
+    animation:fadeIn .8s ease;
+
+    transition:.4s;
+
+}
+
+.login-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 25px 60px rgba(99,102,241,.45);
+
+}
+
+/* ===============================
+   MOVIE ICON
+=================================*/
+
+.movie-icon{
+
+    width:95px;
+
+    height:95px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(135deg,#6366F1,#3B82F6);
+
+    color:white;
+
+    font-size:45px;
+
+    box-shadow:0 0 35px rgba(99,102,241,.65);
+
+    animation:float 3s infinite ease-in-out;
+
+}
+
+/* ===============================
+   TITLES
+=================================*/
+
+.login-title{
+
+    font-size:32px;
+
+    font-weight:700;
+
+    color:white;
+
+}
+
+.login-subtitle{
+
+    color:#cbd5e1;
+
+    font-size:15px;
+
+}
+
+/* ===============================
+   LABELS
+=================================*/
+
+.form-label{
+
+    color:white;
+
+    font-weight:600;
+
+}
+
+/* ===============================
+   INPUT GROUP
+=================================*/
+
+.input-group{
+
+    transition:.3s;
+
+}
+
+.input-group:hover{
+
+    transform:scale(1.02);
+
+}
+
+.input-group-text{
+
+    background:rgba(255,255,255,.10);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    color:white;
+
+}
+
+.form-control{
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    color:white;
+
+    height:55px;
+
+}
+
+.form-control::placeholder{
+
+    color:#d1d5db;
+
+}
+
+.form-control:focus{
+
+    background:rgba(255,255,255,.10);
+
+    color:white;
+
+    border-color:#6366F1;
+
+    box-shadow:0 0 18px rgba(99,102,241,.45);
+
+}
+
+/* ===============================
+   PASSWORD BUTTON
+=================================*/
+
+.input-group .btn{
+
+    border-color:rgba(255,255,255,.20);
+
+    color:white;
+
+}
+
+.input-group .btn:hover{
+
+    background:#6366F1;
+
+    border-color:#6366F1;
+
+}
+
+/* ===============================
+   LOGIN BUTTON
+=================================*/
+
+.btn-primary{
+
+    height:55px;
+
+    border:none;
+
+    background:linear-gradient(90deg,#4F46E5,#2563EB);
+
+    font-weight:600;
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.btn-primary::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:120%;
+
+    height:100%;
+
+    background:rgba(255,255,255,.25);
+
+    transform:skewX(-30deg);
+
+    transition:.6s;
+
+}
+
+.btn-primary:hover::before{
+
+    left:130%;
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 30px rgba(79,70,229,.55);
+
+}
+
+/* ===============================
+   LINKS
+=================================*/
+
+.btn-link{
+
+    color:#93C5FD;
+
+    transition:.3s;
+
+}
+
+.btn-link:hover{
+
+    color:white;
+
+    transform:translateX(3px);
+
+}
+
+/* ===============================
+   REGISTER BUTTON
+=================================*/
+
+.btn-outline-info{
+
+    transition:.35s;
+
+    font-weight:600;
+
+}
+
+.btn-outline-info:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(6,182,212,.35);
+
+}
+
+/* ===============================
+   DIVIDER
+=================================*/
+
+hr{
+
+    opacity:.25;
+
+}
+
+/* ===============================
+   RESPONSIVE
+=================================*/
+
+@media(max-width:576px){
+
+.login-card{
+
+padding:28px;
+
+}
+
+.login-title{
+
+font-size:26px;
+
+}
+
+.movie-icon{
+
+width:80px;
+
+height:80px;
+
+font-size:36px;
+
+}
+
+}

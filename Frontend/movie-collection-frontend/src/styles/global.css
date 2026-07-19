@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    background:linear-gradient(-45deg,#0f172a,#1e3a8a,#312e81,#6d28d9);
+
+    background-size:400% 400%;
+
+    animation:gradientBG 12s ease infinite;
+
+    overflow-x:hidden;
+
+}
+
+@keyframes gradientBG{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:500px;
+
+height:500px;
+
+background:#4f46e5;
+
+border-radius:50%;
+
+filter:blur(180px);
+
+top:-150px;
+
+left:-150px;
+
+opacity:.35;
+
+animation:float1 10s infinite alternate;
+
+z-index:-2;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:450px;
+
+height:450px;
+
+background:#06b6d4;
+
+border-radius:50%;
+
+filter:blur(180px);
+
+bottom:-150px;
+
+right:-150px;
+
+opacity:.30;
+
+animation:float2 12s infinite alternate;
+
+z-index:-2;
+
+}
+
+@keyframes float1{
+
+from{
+transform:translateY(0);
+}
+
+to{
+transform:translateY(80px);
+}
+
+}
+
+@keyframes float2{
+
+from{
+transform:translateY(0);
+}
+
+to{
+transform:translateY(-80px);
+}
+
+}
+
+.card{
+
+background:rgba(255,255,255,.08)!important;
+
+backdrop-filter:blur(18px);
+
+border:none!important;
+
+border-radius:20px!important;
+
+box-shadow:0 15px 35px rgba(0,0,0,.35);
+
+color:white;
+
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 20px 45px rgba(0,0,0,.45);
+
+}
+
+.form-control{
+
+height:50px;
+
+border-radius:12px;
+
+background:rgba(255,255,255,.08);
+
+color:white;
+
+border:1px solid rgba(255,255,255,.2);
+
+}
+
+.form-control:focus{
+
+background:rgba(255,255,255,.12);
+
+color:white;
+
+border-color:#60a5fa;
+
+box-shadow:0 0 20px rgba(59,130,246,.4);
+
+}
+
+.form-control::placeholder{
+
+color:#d1d5db;
+
+}
+
+.btn-primary{
+
+background:linear-gradient(90deg,#2563eb,#7c3aed);
+
+border:none;
+
+border-radius:12px;
+
+height:50px;
+
+font-weight:600;
+
+transition:.35s;
+
+}
+
+.btn-primary:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 10px 25px rgba(124,58,237,.5);
+
+}
+
+h1,h2,h3,h4,h5{
+
+color:white;
+
+font-weight:700;
+
+}
+
+label{
+
+color:white;
+
+font-weight:500;
+
+}
+
+.btn-link{
+
+text-decoration:none;
+
+color:#93c5fd;
+
+}
+
+.btn-link:hover{
+
+color:white;
+
+}

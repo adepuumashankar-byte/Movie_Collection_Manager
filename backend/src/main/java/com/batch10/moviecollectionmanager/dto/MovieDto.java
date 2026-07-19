@@ -11,57 +11,92 @@ public class MovieDto {
     private Long id;
 
     @Schema(
-    description = "Title of the movie",
-    example = "Interstellar"
-)
-@NotBlank(message = "Title is required")
-private String title;
+            description = "Title of the movie",
+            example = "Interstellar"
+    )
+    @NotBlank(message = "Title is required")
+    private String title;
 
     @Schema(
-    description = "Director of the movie",
-    example = "Christopher Nolan"
-)
-@NotBlank(message = "Director is required")
-private String director;
-
+            description = "Director of the movie",
+            example = "Christopher Nolan"
+    )
+    @NotBlank(message = "Director is required")
+    private String director;
 
     @Schema(
-    description = "Genre of the movie",
-    example = "Sci-Fi"
-)
-@NotBlank(message = "Genre is required")
-private String genre;
+            description = "Genre of the movie",
+            example = "Sci-Fi"
+    )
+    @NotBlank(message = "Genre is required")
+    private String genre;
 
+    @Schema(
+            description = "Year in which the movie was released",
+            example = "2014"
+    )
+    @NotNull(message = "Release year is required")
+    private Integer releaseYear;
 
+    @Schema(
+            description = "Movie rating out of 10",
+            example = "8.8"
+    )
+    @NotNull(message = "Rating is required")
+    @Min(value = 1, message = "Rating must be at least 1")
+    @Max(value = 10, message = "Rating must not exceed 10")
+    private Double rating;
 
-@Schema(
-    description = "Year in which the movie was released",
-    example = "2014"
-)
-@NotNull(message = "Release year is required")
-private Integer releaseYear;
-
-
-@Schema(
-    description = "Movie rating out of 10",
-    example = "8.8"
-)
-@NotNull(message = "Rating is required")
-@Min(value = 1, message = "Rating must be at least 1")
-@Max(value = 10, message = "Rating must not exceed 10")
-private Double rating;
-
-
+    @Schema(
+            description = "Language of the movie",
+            example = "English"
+    )
     @NotBlank(message = "Language is required")
     private String language;
 
+    @Schema(
+            description = "Duration in minutes",
+            example = "169"
+    )
     @NotNull(message = "Duration is required")
     private Integer duration;
 
+    @Schema(
+            description = "Short description of the movie",
+            example = "A team travels through a wormhole to save humanity."
+    )
     private String description;
+// ==========================
+// COLLECTION FIELDS
+// ==========================
+
+@Schema(
+        description = "Opening Day Collection (Crores)",
+        example = "65"
+)
+@NotNull(message = "Opening Day Collection is required")
+private Double openingDayCollection;
+
+@Schema(
+        description = "Highest Single Day Collection (Crores)",
+        example = "92"
+)
+@NotNull(message = "Highest Single Day Collection is required")
+private Double highestSingleDayCollection;
+
+@Schema(
+        description = "Worldwide Collection (Crores)",
+        example = "1200"
+)
+@NotNull(message = "Worldwide Collection is required")
+private Double worldwideCollection;
 
     public MovieDto() {
     }
+
+    // ==========================
+    // GETTERS & SETTERS
+    // ==========================
 
     public Long getId() {
         return id;
@@ -134,4 +169,28 @@ private Double rating;
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public Double getOpeningDayCollection() {
+    return openingDayCollection;
+}
+
+public void setOpeningDayCollection(Double openingDayCollection) {
+    this.openingDayCollection = openingDayCollection;
+}
+
+public Double getHighestSingleDayCollection() {
+    return highestSingleDayCollection;
+}
+
+public void setHighestSingleDayCollection(Double highestSingleDayCollection) {
+    this.highestSingleDayCollection = highestSingleDayCollection;
+}
+
+public Double getWorldwideCollection() {
+    return worldwideCollection;
+}
+
+public void setWorldwideCollection(Double worldwideCollection) {
+    this.worldwideCollection = worldwideCollection;
+}
 }

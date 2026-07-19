@@ -52,19 +52,7 @@ public class MovieServiceImpl implements MovieService {
 
         for (Movie movie : movies) {
 
-            MovieDto dto = new MovieDto();
-
-            dto.setId(movie.getId());
-            dto.setTitle(movie.getTitle());
-            dto.setDirector(movie.getDirector());
-            dto.setGenre(movie.getGenre());
-            dto.setReleaseYear(movie.getReleaseYear());
-            dto.setRating(movie.getRating());
-            dto.setLanguage(movie.getLanguage());
-            dto.setDuration(movie.getDuration());
-            dto.setDescription(movie.getDescription());
-
-            movieDtos.add(dto);
+           movieDtos.add(modelMapper.map(movie, MovieDto.class));
         }
 
         return movieDtos;
@@ -398,19 +386,9 @@ public MovieDto updateReleaseYear(Long id, Integer releaseYear) {
 
     Movie updatedMovie = movieRepository.save(movie);
 
-    MovieDto dto = new MovieDto();
-
-    dto.setId(updatedMovie.getId());
-    dto.setTitle(updatedMovie.getTitle());
-    dto.setDirector(updatedMovie.getDirector());
-    dto.setGenre(updatedMovie.getGenre());
-    dto.setReleaseYear(updatedMovie.getReleaseYear());
-    dto.setRating(updatedMovie.getRating());
-    dto.setLanguage(updatedMovie.getLanguage());
-    dto.setDuration(updatedMovie.getDuration());
-    dto.setDescription(updatedMovie.getDescription());
-
-    return dto;
+    return modelMapper.map(updatedMovie, MovieDto.class);
 }
+
+
 
 }
